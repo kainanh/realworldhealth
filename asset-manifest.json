@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/realworldhealth/static/css/main.a240c550.css",
-    "main.js": "/realworldhealth/static/js/main.67251115.js",
+    "main.js": "/realworldhealth/static/js/main.0745f559.js",
     "static/js/787.e1cab24e.chunk.js": "/realworldhealth/static/js/787.e1cab24e.chunk.js",
     "static/media/stock-photo3.jpg": "/realworldhealth/static/media/stock-photo3.8e4ce5fbef237d686c80.jpg",
     "static/media/stock-photo1.jpg": "/realworldhealth/static/media/stock-photo1.125ba0ef1aa0828c610f.jpg",
@@ -9,11 +9,11 @@
     "static/media/rwhealth-logo.png": "/realworldhealth/static/media/rwhealth-logo.14e0e096f2d29815d8a7.png",
     "index.html": "/realworldhealth/index.html",
     "main.a240c550.css.map": "/realworldhealth/static/css/main.a240c550.css.map",
-    "main.67251115.js.map": "/realworldhealth/static/js/main.67251115.js.map",
+    "main.0745f559.js.map": "/realworldhealth/static/js/main.0745f559.js.map",
     "787.e1cab24e.chunk.js.map": "/realworldhealth/static/js/787.e1cab24e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a240c550.css",
-    "static/js/main.67251115.js"
+    "static/js/main.0745f559.js"
   ]
 }

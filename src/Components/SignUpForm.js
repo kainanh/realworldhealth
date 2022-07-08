@@ -26,6 +26,8 @@ export default function SignUpForm(props) {
           type="email"
           fullWidth
           variant="outlined"
+          value={props.valueEmail}
+          onChange={props.onChangeEmail}
         />
         <DialogContentText>
           Please enter a password; password must contain 10+ characters,
@@ -36,18 +38,22 @@ export default function SignUpForm(props) {
           margin="dense"
           id="name"
           label="Password"
-          type="password"
+          // type="password"
           fullWidth
           variant="outlined"
+          value={props.valuePassword}
+          onChange={props.onChangePassword}
         />
         <TextField
           required
           margin="dense"
           id="name"
           label="Password Confirmation"
-          type="password"
+          // type="password"
           fullWidth
           variant="outlined"
+          value={props.valuePasswordCon}
+          onChange={props.onChangePasswordConfirmation}
         />
       </DialogContent>
       <DialogActions sx={{ marginRight: 2 }}>
@@ -68,6 +74,7 @@ export default function SignUpForm(props) {
           Submit
         </Button>
       </DialogActions>
+      {props.displayResponseMessage}
     </Dialog>
   );
 }

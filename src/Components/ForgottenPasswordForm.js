@@ -28,6 +28,7 @@ export default function ForgottenPasswordForm(props) {
           type="email"
           fullWidth
           variant="outlined"
+          onChange={props.onChangeEmail}
         />
       </DialogContent>
       <DialogActions sx={{ marginRight: 2 }}>

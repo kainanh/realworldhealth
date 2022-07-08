@@ -20,6 +20,7 @@ export default function LoginForm(props) {
   ];
   return (
     <Grid
+      data-testid="login-form"
       container
       className="login-page-wrapper"
       component="main"
@@ -141,13 +142,19 @@ export default function LoginForm(props) {
                 <Link
                   href="#"
                   variant="body2"
+                  data-testid="forgotPasswordLink"
                   onClick={props.handleForgottenPassword}
                 >
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2" onClick={props.handleSignUpForm}>
+                <Link
+                  href="#"
+                  variant="body2"
+                  data-testid="createAccountlink"
+                  onClick={props.handleSignUpForm}
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

@@ -11,7 +11,11 @@ import {
 
 export default function SignUpForm(props) {
   return (
-    <Dialog open={props.open} sx={{ borderRadius: 5 }}>
+    <Dialog
+      data-testid="signup-form"
+      open={props.open}
+      sx={{ borderRadius: 5 }}
+    >
       <DialogTitle sx={{ fontWeight: "bold" }}>
         Create a new account
       </DialogTitle>
@@ -24,6 +28,7 @@ export default function SignUpForm(props) {
           id="name"
           label="Email Address"
           type="email"
+          data-testid="Email Address"
           fullWidth
           variant="outlined"
           value={props.valueEmail}
@@ -39,6 +44,7 @@ export default function SignUpForm(props) {
           id="name"
           label="Password"
           // type="password"
+          data-testid="Password"
           fullWidth
           variant="outlined"
           value={props.valuePassword}
@@ -50,6 +56,7 @@ export default function SignUpForm(props) {
           id="name"
           label="Password Confirmation"
           // type="password"
+          data-testid="Password Confirmation"
           fullWidth
           variant="outlined"
           value={props.valuePasswordCon}

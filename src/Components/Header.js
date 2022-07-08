@@ -11,10 +11,12 @@ import {
   MenuItem,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Networking from "../Networking";
 
 export default function HeaderBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
+  const networking = new Networking();
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -23,6 +25,11 @@ export default function HeaderBar() {
     setAnchorElUser(null);
     navigate("/");
   };
+
+  async function handleUserLogout() {
+    const response = await networking.logUserOut();
+    if (response.response) navigate("/", 250);
+  }
 
   return (
     <AppBar
@@ -60,7 +67,10 @@ export default function HeaderBar() {
                 horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              onClose={(e) => {
+                handleCloseUserMenu();
+                handleUserLogout();
+              }}
             >
               <MenuItem onClick={handleCloseUserMenu}>Logout</MenuItem>
             </Menu>

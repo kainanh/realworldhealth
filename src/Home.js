@@ -39,13 +39,17 @@ function LoginPage() {
 
   async function handleLoginSubmit(event) {
     event.preventDefault();
-    const response = await networking.handleLoginAttempt();
-    if (response.error) {
+    const sessionID = await networking.handleLoginAttempt(email, password);
+    if (sessionID.error) {
       setShowErrorSnackbar(true);
-    } else {
+    } else if (sessionID) {
+      await loginUser(sessionID);
       navigate("/dashboard");
     }
-    navigate("/dashboard");
+  }
+
+  function loginUser(sessionID) {
+    document.cookie = `sessionID=${sessionID}`;
   }
 
   function handleForgottenPassword() {
@@ -113,12 +117,14 @@ function LoginPage() {
         />
       </Grid>
       <ForgottenPasswordForm
+        data-testid="forgotten-password-form"
         open={openForgottenPasswordForm}
         handleCloseForgottenPasswordForm={handleCloseForgottenPasswordForm}
         handleRecoverPasswordSubmit={handleRecoverPasswordSubmit}
         onChangeEmail={(e) => setEmail(e.target.value)}
       />
       <SignUpForm
+        data-testid="signup-form"
         open={openSignUpForm}
         handleCloseSignUpForm={handleCloseSignUpForm}
         handleSignUpFormSubmit={handleSignUpFormSubmit}

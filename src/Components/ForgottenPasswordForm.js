@@ -11,7 +11,11 @@ import {
 
 export default function ForgottenPasswordForm(props) {
   return (
-    <Dialog open={props.open} sx={{ borderRadius: 5 }}>
+    <Dialog
+      data-testid="forgotPassword-form"
+      open={props.open}
+      sx={{ borderRadius: 5 }}
+    >
       <DialogTitle sx={{ fontWeight: "bold" }}>
         Forgotten your password?
       </DialogTitle>

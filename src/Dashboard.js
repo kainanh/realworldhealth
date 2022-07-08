@@ -1,8 +1,24 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import HeaderBar from "./Components/Header";
+import Networking from "./Networking";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const networking = new Networking();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    checkUserSession();
+  });
+
+  async function checkUserSession() {
+    const authentication = await networking.verifyUserSession();
+    const userLoggedIn = authentication.response;
+    if (!userLoggedIn) navigate("/");
+    return userLoggedIn;
+  }
+
   return (
     <Grid container>
       <HeaderBar />
